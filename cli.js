@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fetch = require('node-fetch');
 const yargs = require('yargs');
 const copyPaste = require('copy-paste');
