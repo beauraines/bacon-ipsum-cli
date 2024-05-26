@@ -1,21 +1,20 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import jest from "eslint-plugin-jest";
+import jestPlugin from "eslint-plugin-jest";
 
 export default [
-  { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
-  { languageOptions: { globals: globals.browser } },
+  {
+    files: ["**/*.js"],
+    languageOptions: { sourceType: "commonjs", globals: globals.nodeBuiltin}
+  },
+  { languageOptions: { ...jestPlugin.environments.globals } },
   pluginJs.configs.recommended,
   {
     plugins: {
-      jest: jest
+      jest: jestPlugin
     },
     rules: {
-      "jest/no-disabled-tests": "warn",
-      "jest/no-focused-tests": "error",
-      "jest/no-identical-title": "error",
-      "jest/prefer-to-have-length": "warn",
-      "jest/valid-expect": "error"
+      ...jestPlugin.configs.recommended.rules, // Use recommended rules from eslint-plugin-jest
     }
   }
 ];
