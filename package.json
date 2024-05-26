@@ -4,7 +4,7 @@
   "description": "CLI for Bacon Ipsum text",
   "main": "cli.js",
   "bin": {
-    "bacon-ipsum": "./cli.js"
+    "bacon-ipsum": "cli.js"
   },
   "scripts": {
     "test": "jest --passWithNoTests",
