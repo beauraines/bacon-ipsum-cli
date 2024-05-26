@@ -3,8 +3,6 @@
 const fetch = require('node-fetch');
 const yargs = require('yargs');
 const copyPaste = require('copy-paste');
-const { alias } = require('yargs');
-const { describe } = require('yargs');
 
 const apiUrl = 'https://baconipsum.com/api/';
 
