@@ -23,27 +23,27 @@ const argv = yargs
     default: 1,
     type: 'number',
   })
-  .option('sentences',{
-    alias: 's',
-    describe: 'Number of sentences. This overrides paragraphs.',
-    type: 'number'
-  })
-  .option('start-with-lorem',{
-    alias: ['l','lorem'],
-    describe: 'Starts the first paragraph with ‘Bacon ipsum dolor sit amet’',
-    type: 'boolean'
-  })
-  .option('format',{
-    alias: 'f',
-    describe:'Output format. Defaults to `text`',
-    default: 'text',
-    choices: ['text','json','html']
-  })
-  .option('no-clip',{
-    alias: 'nc',
-    describe:'Only outputs to console, bypassing the clipboard.',
-    type: 'boolean'
-  })
+  // .option('sentences',{
+  //   alias: 's',
+  //   describe: 'Number of sentences. This overrides paragraphs.',
+  //   type: 'number'
+  // })
+  // .option('start-with-lorem',{
+  //   alias: ['l','lorem'],
+  //   describe: 'Starts the first paragraph with ‘Bacon ipsum dolor sit amet’',
+  //   type: 'boolean'
+  // })
+  // .option('format',{
+  //   alias: 'f',
+  //   describe:'Output format. Defaults to `text`',
+  //   default: 'text',
+  //   choices: ['text','json','html']
+  // })
+  // .option('no-clip',{
+  //   alias: 'nc',
+  //   describe:'Only outputs to console, bypassing the clipboard.',
+  //   type: 'boolean'
+  // })
   .help()
   .argv;
   

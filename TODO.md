@@ -4,3 +4,4 @@
 - [ ] Add other options
 - [ ] Add debug
 - [ ] Add unit tests
+- [ ] Add completion command
