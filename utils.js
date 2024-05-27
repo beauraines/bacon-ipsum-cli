@@ -1,5 +1,8 @@
-import queryString from "query-string";
+import copyPaste  from "copy-paste";
 import debugClient from 'debug'
+import fetch from "node-fetch";
+import queryString from "query-string";
+
 const debug = debugClient('bacon-ipsum-cli-utils');
 
 export const buildQueryString = (argv) => {

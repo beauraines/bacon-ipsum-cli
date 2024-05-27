@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-import fetch from "node-fetch";
 import yargs from "yargs";
-import copyPaste  from "copy-paste";
 import debugClient from 'debug'
-import { buildQueryString } from './utils.js';
+import { buildQueryString, getBacon } from './utils.js';
 
 const debug = debugClient('bacon-ipsum-cli');
 const apiUrl = 'https://baconipsum.com/api/';
@@ -53,18 +51,5 @@ const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
 debug(apiUrlWithParams)
 
 // Fetch data from the Bacon Ipsum API
-fetch(apiUrlWithParams)
-  .then((response) => response.json())
-  .then((data) => {
-    if (argv.noClip) { // noClip is alias for no-clip
-      // Display the fetched text in the console
-      console.log(data.join('\n'));
-    } else {
-      // Copy the text to the clipboard
-      copyPaste.copy(data.join('\n'), () => {
-        console.log('Bacon ipsum text copied to the clipboard!');
-      });
-    }
-
-  })
-  .catch((error) => console.error('Error fetching data:', error));
+let noClip = argv.noClip
+getBacon(apiUrlWithParams,noClip)
