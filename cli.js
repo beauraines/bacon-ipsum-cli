@@ -24,11 +24,11 @@ const argv = yargs(process.argv.slice(2))
     default: 1,
     type: 'number',
   })
-  // .option('sentences',{
-  //   alias: 's',
-  //   describe: 'Number of sentences. This overrides paragraphs.',
-  //   type: 'number'
-  // })
+  .option('sentences',{
+    alias: 's',
+    describe: 'Number of sentences. This overrides paragraphs.',
+    type: 'number'
+  })
   // .option('start-with-lorem',{
   //   alias: ['l','lorem'],
   //   describe: 'Starts the first paragraph with ‘Bacon ipsum dolor sit amet’',
@@ -48,7 +48,7 @@ const argv = yargs(process.argv.slice(2))
   .help()
   .argv;
   
-  const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
+const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
 debug(apiUrlWithParams)
 
 // Fetch data from the Bacon Ipsum API
