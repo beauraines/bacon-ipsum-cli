@@ -48,10 +48,15 @@ const argv = yargs(process.argv.slice(2))
   .help()
   .argv;
   
-// Build the API URL with the specified options
-let queryParams = {type: argv.type, paras: argv.paras}
-const apiUrlWithParams = `${apiUrl}?${queryString.stringify(queryParams)}`;
-debug(apiUrlWithParams)
+const buildQueryString = (argv,apiUrl) => {
+  // Build the API URL with the specified options
+  let queryParams = {type: argv.type, paras: argv.paras}
+  const apiUrlWithParams = `${apiUrl}?${queryString.stringify(queryParams)}`;
+  debug(apiUrlWithParams)
+  return apiUrlWithParams
+}
+
+const apiUrlWithParams = buildQueryString(argv,apiUrl)
 
 // Fetch data from the Bacon Ipsum API
 fetch(apiUrlWithParams)
