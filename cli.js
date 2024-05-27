@@ -43,6 +43,7 @@ const argv = yargs(process.argv.slice(2))
     describe:'Only outputs to console, bypassing the clipboard.',
     type: 'boolean'
   })
+  .completion()
   .help()
   .argv;
 
