@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.1...v0.2.2) (2024-05-27)
+
+
+### Bug Fixes
+
+* **deps:** bump node-fetch from 2.6.7 to 3.3.2 ([7449d32](https://github.com/beauraines/bacon-ipsum-cli/commit/7449d32f88e2da06e0394fce9eebf7963a043cf0))
+
 ### [0.2.1](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.0...v0.2.1) (2024-05-27)
 
 
