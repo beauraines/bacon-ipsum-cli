@@ -29,11 +29,11 @@ const argv = yargs(process.argv.slice(2))
     describe: 'Number of sentences. This overrides paragraphs.',
     type: 'number'
   })
-  // .option('start-with-lorem',{
-  //   alias: ['l','lorem'],
-  //   describe: 'Starts the first paragraph with ‘Bacon ipsum dolor sit amet’',
-  //   type: 'boolean'
-  // })
+  .option('start-with-lorem',{
+    alias: ['l','lorem'],
+    describe: 'Starts the first paragraph with ‘Bacon ipsum dolor sit amet’',
+    type: 'boolean'
+  })
   // .option('format',{
   //   alias: 'f',
   //   describe:'Output format. Defaults to `text`',
@@ -47,7 +47,8 @@ const argv = yargs(process.argv.slice(2))
   // })
   .help()
   .argv;
-  
+
+debug(argv)
 const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
 debug(apiUrlWithParams)
 
