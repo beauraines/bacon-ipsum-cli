@@ -3,7 +3,11 @@
 import fetch from "node-fetch";
 import yargs from "yargs";
 import copyPaste  from "copy-paste";
+import debugClient from 'debug'
+import { buildQueryString } from './utils.js';
 
+
+const debug = debugClient('bacon-ipsum-cli');
 const apiUrl = 'https://baconipsum.com/api/';
 
 // Define command-line options using yargs
@@ -21,16 +25,16 @@ const argv = yargs(process.argv.slice(2))
     default: 1,
     type: 'number',
   })
-  // .option('sentences',{
-  //   alias: 's',
-  //   describe: 'Number of sentences. This overrides paragraphs.',
-  //   type: 'number'
-  // })
-  // .option('start-with-lorem',{
-  //   alias: ['l','lorem'],
-  //   describe: 'Starts the first paragraph with ‘Bacon ipsum dolor sit amet’',
-  //   type: 'boolean'
-  // })
+  .option('sentences',{
+    alias: 's',
+    describe: 'Number of sentences. This overrides paragraphs.',
+    type: 'number'
+  })
+  .option('start-with-lorem',{
+    alias: ['l','lorem'],
+    describe: 'Starts the first paragraph with ‘Bacon ipsum dolor sit amet’',
+    type: 'boolean'
+  })
   // .option('format',{
   //   alias: 'f',
   //   describe:'Output format. Defaults to `text`',
@@ -44,10 +48,10 @@ const argv = yargs(process.argv.slice(2))
   // })
   .help()
   .argv;
-  
-// Build the API URL with the specified options
-// TODO support additional parameters
-const apiUrlWithParams = `${apiUrl}?type=${argv.type}&paras=${argv.paras}`;
+
+debug(argv)
+const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
+debug(apiUrlWithParams)
 
 // Fetch data from the Bacon Ipsum API
 fetch(apiUrlWithParams)

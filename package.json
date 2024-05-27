@@ -20,10 +20,12 @@
     "chalk": "^4.1.2",
     "copy-paste": "^1.5.3",
     "node-fetch": "^2.6.7",
+    "query-string": "^9.0.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",
+    "debug": "^4.3.4",
     "eslint": "^9.3.0",
     "eslint-plugin-jest": "^28.5.0",
     "globals": "^15.3.0",
