@@ -14,3 +14,21 @@ export const buildQueryString = (argv) => {
     debug(qs)
     return qs
   }
+
+  export const getBacon = (apiUrlWithParams,noClip) => {
+    fetch(apiUrlWithParams)
+      .then((response) => response.json())
+      .then((data) => {
+        if (noClip) { // noClip is alias for no-clip
+          // Display the fetched text in the console
+          console.log(data.join('\n'));
+        } else {
+          // Copy the text to the clipboard
+          copyPaste.copy(data.join('\n'), () => {
+            console.log('Bacon ipsum text copied to the clipboard!');
+          });
+        }
+
+      })
+      .catch((error) => console.error('Error fetching data:', error));
+  }

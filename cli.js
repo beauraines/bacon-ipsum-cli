@@ -40,11 +40,11 @@ const argv = yargs(process.argv.slice(2))
   //   default: 'text',
   //   choices: ['text','json','html']
   // })
-  // .option('no-clip',{
-  //   alias: 'nc',
-  //   describe:'Only outputs to console, bypassing the clipboard.',
-  //   type: 'boolean'
-  // })
+  .option('no-clip',{
+    alias: 'nc',
+    describe:'Only outputs to console, bypassing the clipboard.',
+    type: 'boolean'
+  })
   .help()
   .argv;
 
@@ -56,12 +56,15 @@ debug(apiUrlWithParams)
 fetch(apiUrlWithParams)
   .then((response) => response.json())
   .then((data) => {
-    // Display the fetched text in the console
-    console.log(data.join('\n'));
+    if (argv.noClip) { // noClip is alias for no-clip
+      // Display the fetched text in the console
+      console.log(data.join('\n'));
+    } else {
+      // Copy the text to the clipboard
+      copyPaste.copy(data.join('\n'), () => {
+        console.log('Bacon ipsum text copied to the clipboard!');
+      });
+    }
 
-    // Copy the text to the clipboard
-    copyPaste.copy(data.join('\n'), () => {
-      console.log('Text copied to clipboard!');
-    });
   })
   .catch((error) => console.error('Error fetching data:', error));

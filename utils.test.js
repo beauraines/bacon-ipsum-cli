@@ -1,4 +1,8 @@
-import { buildQueryString } from "./utils.js";
+/* eslint-disable jest/no-disabled-tests */
+import { buildQueryString, getBacon } from "./utils.js";
+import copyPaste  from "copy-paste";
+import debugClient from 'debug'
+const debug = debugClient('utils-tests');
 
 
 
@@ -25,6 +29,32 @@ Tongue venison ham tri-tip.  Pig porchetta bacon, kielbasa pork chop spare ribs 
     expect(buildQueryString(argv)).toBe('paras=5&type=all-meat')
     argv['start-with-lorem'] = true
     expect(buildQueryString(argv)).toBe('paras=5&start-with-lorem=1&type=all-meat')
+  });
+
+  test('skip copying to the clipboard',() => {
+    let argv = {}
+    const noClip = true;
+    const currentClipboardContents = copyPaste.paste()
+    debug(currentClipboardContents)
+
+    const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
+    getBacon(apiUrlWithParams,noClip)
+    const newClipboardContents = copyPaste.paste()
+    debug(newClipboardContents)
+
+    expect(newClipboardContents).toBe(currentClipboardContents)
+  });
+
+  test.skip('copying to the clipboard',async () => {
+    let argv = {}
+    const noClip = undefined;
+    const currentClipboardContents = copyPaste.paste()
+    debug(currentClipboardContents)
+    const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
+    getBacon(apiUrlWithParams, noClip)
+    const newClipboardContents = copyPaste.paste()
+    debug(newClipboardContents)
+    expect(newClipboardContents).not.toBe(currentClipboardContents)
   });
 
 });
