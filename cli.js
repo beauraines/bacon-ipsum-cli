@@ -38,7 +38,7 @@ const argv = yargs(process.argv.slice(2))
   //   default: 'text',
   //   choices: ['text','json','html']
   // })
-  .option('no-clip',{
+  .option('nc',{
     alias: 'nc',
     describe:'Only outputs to console, bypassing the clipboard.',
     type: 'boolean'
@@ -51,5 +51,7 @@ const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
 debug(apiUrlWithParams)
 
 // Fetch data from the Bacon Ipsum API
-let noClip = argv.noClip
+let noClip = argv.nc
+debug(argv.noClip)
+
 getBacon(apiUrlWithParams,noClip)
