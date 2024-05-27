@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "chalk": "^4.1.2",
+    "chalk": "^5.3.0",
     "copy-paste": "^1.5.3",
     "node-fetch": "^2.6.7",
     "query-string": "^9.0.0",
