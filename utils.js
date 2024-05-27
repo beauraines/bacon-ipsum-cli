@@ -8,7 +8,7 @@ export const buildQueryString = (argv) => {
       type: argv.type, 
       paras: argv.paras, 
       sentences: argv.sentences,
-      "start-with-lorem" : argv['start-with-lorem'] ? 1 : null
+      "start-with-lorem" : argv['start-with-lorem'] ? 1 : undefined
     }
     const qs = queryString.stringify(queryParams);
     debug(qs)

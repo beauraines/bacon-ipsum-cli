@@ -6,7 +6,6 @@ import copyPaste  from "copy-paste";
 import debugClient from 'debug'
 import { buildQueryString } from './utils.js';
 
-
 const debug = debugClient('bacon-ipsum-cli');
 const apiUrl = 'https://baconipsum.com/api/';
 
