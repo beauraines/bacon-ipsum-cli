@@ -3,8 +3,8 @@
 import fetch from "node-fetch";
 import yargs from "yargs";
 import copyPaste  from "copy-paste";
-import queryString from "query-string";
 import debugClient from 'debug'
+import { buildQueryString } from './utils.js';
 
 const debug = debugClient('bacon-ipsum-cli');
 const apiUrl = 'https://baconipsum.com/api/';
@@ -48,15 +48,8 @@ const argv = yargs(process.argv.slice(2))
   .help()
   .argv;
   
-const buildQueryString = (argv,apiUrl) => {
-  // Build the API URL with the specified options
-  let queryParams = {type: argv.type, paras: argv.paras}
-  const apiUrlWithParams = `${apiUrl}?${queryString.stringify(queryParams)}`;
-  debug(apiUrlWithParams)
-  return apiUrlWithParams
-}
-
 const apiUrlWithParams = buildQueryString(argv,apiUrl)
+debug(apiUrlWithParams)
 
 // Fetch data from the Bacon Ipsum API
 fetch(apiUrlWithParams)
