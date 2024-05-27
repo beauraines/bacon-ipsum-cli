@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-const fetch = require('node-fetch');
-const yargs = require('yargs');
-const copyPaste = require('copy-paste');
+import fetch from "node-fetch";
+import yargs from "yargs";
+import copyPaste  from "copy-paste";
 
 const apiUrl = 'https://baconipsum.com/api/';
 
 // Define command-line options using yargs
-const argv = yargs
+const argv = yargs(process.argv.slice(2))
   .scriptName('bacon')
   .option('type', {
     alias: 't',

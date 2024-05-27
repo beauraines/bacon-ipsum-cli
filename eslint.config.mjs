@@ -5,7 +5,7 @@ import jestPlugin from "eslint-plugin-jest";
 export default [
   {
     files: ["**/*.js"],
-    languageOptions: { sourceType: "commonjs", globals: globals.nodeBuiltin}
+    languageOptions: { sourceType: "module", ecmaVersion: "latest", globals: globals.nodeBuiltin}
   },
   { languageOptions: { ...jestPlugin.environments.globals } },
   pluginJs.configs.recommended,
