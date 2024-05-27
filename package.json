@@ -5,7 +5,7 @@
   "exports": "./cli.js",
   "type": "module",
   "bin": {
-    "bacon-ipsum": "cli.js"
+    "bacon": "cli.js"
   },
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --passWithNoTests --silent",
@@ -14,8 +14,15 @@
     "release": "standard-version",
     "should-release": "should-release"
   },
-  "author": "Beau Raines",
-  "license": "ISC",
+  "author": "Beau Raines <beau.raines@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beauraines/bacon-ipsum-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beauraines/bacon-ipsum-cli/issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2",
     "copy-paste": "^1.5.3",
