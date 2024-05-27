@@ -21,6 +21,10 @@ Tongue venison ham tri-tip.  Pig porchetta bacon, kielbasa pork chop spare ribs 
     expect(buildQueryString(argv)).toBe('type=all-meat')
     argv.paras=5
     expect(buildQueryString(argv)).toBe('paras=5&type=all-meat')
+    argv['start-with-lorem'] = undefined
+    expect(buildQueryString(argv)).toBe('paras=5&type=all-meat')
+    argv['start-with-lorem'] = true
+    expect(buildQueryString(argv)).toBe('paras=5&start-with-lorem=1&type=all-meat')
   });
 
 });
