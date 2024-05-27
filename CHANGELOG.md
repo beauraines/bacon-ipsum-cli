@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.1.5...v0.2.0) (2024-05-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* does not display returned text to the console anymore. By default it copies to the clipboard.
+If `--no-clip` or `--nc` are passed with the command, output is _only_ output to the console, bypassing the clipboard.
+
+### Features
+
+* adds completion command ([fed1266](https://github.com/beauraines/bacon-ipsum-cli/commit/fed12669bfcb30bf40b3789ad2b2ed76f95b9f47))
+* calls API from utils module ([6c64902](https://github.com/beauraines/bacon-ipsum-cli/commit/6c64902ecdc28f9ac4a15c613239b8020ecf64ec))
+* enables no-clip option ([aff861e](https://github.com/beauraines/bacon-ipsum-cli/commit/aff861e75ca0bc9ddf0320d008faa41fa672312c))
+
+
+### Bug Fixes
+
+* fixes no clip option ([c108a77](https://github.com/beauraines/bacon-ipsum-cli/commit/c108a774c87ec028c13a0aa9bbedee435912b9b7))
+
 ### [0.1.5](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.1.4...v0.1.5) (2024-05-27)
 
 
