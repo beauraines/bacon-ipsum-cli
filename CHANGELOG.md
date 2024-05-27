@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.2...v0.2.3) (2024-05-27)
+
+
+### Bug Fixes
+
+* moves debug to dependency ([5107e8b](https://github.com/beauraines/bacon-ipsum-cli/commit/5107e8b58116570c0715b978a343f12f34fa48bf))
+
 ### [0.2.2](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.1...v0.2.2) (2024-05-27)
 
 
