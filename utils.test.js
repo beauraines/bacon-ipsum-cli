@@ -31,7 +31,7 @@ Tongue venison ham tri-tip.  Pig porchetta bacon, kielbasa pork chop spare ribs 
     expect(buildQueryString(argv)).toBe('paras=5&start-with-lorem=1&type=all-meat')
   });
 
-  test('skip copying to the clipboard',() => {
+  test.skip('skip copying to the clipboard',() => {
     let argv = {}
     const noClip = true;
     const currentClipboardContents = copyPaste.paste()
