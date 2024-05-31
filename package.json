@@ -1,6 +1,6 @@
 {
   "name": "@beauraines/bacon-ipsum-cli",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "CLI for Bacon Ipsum text",
   "exports": "./cli.js",
   "type": "module",
