@@ -1,6 +1,8 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [0.2.5](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.4...v0.2.5) (2024-06-05)
 
 ### [0.2.4](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.3...v0.2.4) (2024-05-31)
 
