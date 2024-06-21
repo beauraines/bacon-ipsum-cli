@@ -2,7 +2,7 @@
 
 import yargs from "yargs";
 import debugClient from 'debug'
-import { buildQueryString, getBacon } from './utils.js';
+import { buildQueryString, getBacon, processOutput } from './utils.js';
 
 const debug = debugClient('bacon-ipsum-cli');
 const apiUrl = 'https://baconipsum.com/api/';
@@ -55,4 +55,5 @@ debug(apiUrlWithParams)
 let noClip = argv.nc
 debug(argv.noClip)
 
-getBacon(apiUrlWithParams,noClip)
+let bacon = await getBacon(apiUrlWithParams)
+processOutput(bacon, noClip);

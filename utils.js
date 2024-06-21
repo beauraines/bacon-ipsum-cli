@@ -18,18 +18,14 @@ export const buildQueryString = (argv) => {
     return qs
   }
 
-  export const getBacon = async (apiUrlWithParams,noClip) => {
+  export const getBacon = async (apiUrlWithParams) => {
     try {
       let response = await fetch(apiUrlWithParams)
-      let data
       if (response.ok) {
-        // TODO maybe even return here
-        data = await response.json()
+        return await response.json()
       } else {
         throw new Error(response.statusText);
       }
-      // TODO - don't process the output here, return it and let the main function process the output
-      processOutput(data, noClip);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
