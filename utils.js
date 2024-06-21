@@ -29,16 +29,20 @@ export const buildQueryString = (argv) => {
         throw new Error(response.statusText);
       }
       // TODO - don't process the output here, return it and let the main function process the output
-      if (noClip) { // noClip is alias for no-clip
-        // Display the fetched text in the console
-        console.log(data.join('\n'));
-      } else {  
-          // Copy the text to the clipboard
-          copyPaste.copy(data.join('\n'), () => {
-            console.log('Bacon ipsum text copied to the clipboard!');
-          });
-      }
+      processOutput(data, noClip);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   }
+
+  export const processOutput = (data, noClip) => {
+  if (noClip) { // noClip is alias for no-clip
+    // Display the fetched text in the console
+    console.log(data.join('\n'));
+  } else {
+    // Copy the text to the clipboard
+    copyPaste.copy(data.join('\n'), () => {
+      console.log('Bacon ipsum text copied to the clipboard!');
+    });
+  }
+}
