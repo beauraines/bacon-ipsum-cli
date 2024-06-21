@@ -8,7 +8,6 @@ const debug = debugClient('utils-tests');
 
 describe('utilities', () => {
 
-  // eslint-disable-next-line no-unused-vars
   const apiUrl = 'https://baconipsum.com/api/';
 
   test('should return multiple paragraphs', () => {
