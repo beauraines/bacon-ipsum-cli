@@ -1,14 +1,13 @@
 /* eslint-disable jest/no-disabled-tests */
-import { buildQueryString, getBacon, processOutput } from "./utils.js";
+import { buildQueryString, processOutput } from "./utils.js";
 import copyPaste  from "copy-paste";
 import debugClient from 'debug'
+// eslint-disable-next-line no-unused-vars
 const debug = debugClient('utils-tests');
 
 
 
 describe('utilities', () => {
-
-  const apiUrl = 'https://baconipsum.com/api/';
 
   test('should return multiple paragraphs', () => {
     const paragraphs = 2;
