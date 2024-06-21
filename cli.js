@@ -56,4 +56,8 @@ let noClip = argv.nc
 debug(argv.noClip)
 
 let bacon = await getBacon(apiUrlWithParams)
-processOutput(bacon, noClip);
+let outputOptions = {
+  noClip: noClip
+}
+debug(outputOptions)
+processOutput(bacon, outputOptions);

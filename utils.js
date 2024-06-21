@@ -31,8 +31,8 @@ export const buildQueryString = (argv) => {
     }
   }
 
-  export const processOutput = (data, noClip) => {
-  if (noClip) { // noClip is alias for no-clip
+  export const processOutput = (data, options) => {
+  if (options.noClip) { // noClip is alias for no-clip
     // Display the fetched text in the console
     console.log(data.join('\n'));
   } else {
