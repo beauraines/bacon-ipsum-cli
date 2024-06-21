@@ -32,10 +32,10 @@ Tongue venison ham tri-tip.  Pig porchetta bacon, kielbasa pork chop spare ribs 
 
 });
 
-describe("skip copy to clipboard", () => {
+// Skipped because GitHub runner doesn't include xclip
+describe.skip("skip copy to clipboard", () => {
   test('skip copying to the clipboard',async () => {
     let bacon = ["bacon ipsum","turkey"]
-    const noClip = true;
     await copyPaste.copy("foo")
     processOutput(bacon, {noClip: true});
     const newClipboardContents = await copyPaste.paste()
@@ -43,8 +43,8 @@ describe("skip copy to clipboard", () => {
   });
 });
 
-
-describe("copy to clipboard", () => {
+// Skipped because GitHub runner doesn't include xclip
+describe.skip("copy to clipboard", () => {
   test('processes output to clipboard',async () => {
     let bacon = ["bacon ipsum","turkey"]
     const noClip = undefined;
