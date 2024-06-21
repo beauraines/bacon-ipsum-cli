@@ -9,8 +9,8 @@
   },
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --passWithNoTests --silent",
-    "lint": "eslint . ./**/*.js ./**/*.mjs",
-    "lint:fix": "eslint . ./**/*.js ./**/*.mjs --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "release": "commit-and-tag-version",
     "should-release": "should-release"
   },
