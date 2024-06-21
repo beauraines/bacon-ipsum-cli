@@ -1,5 +1,5 @@
 /* eslint-disable jest/no-disabled-tests */
-import { buildQueryString, getBacon } from "./utils.js";
+import { buildQueryString, getBacon, processOutput } from "./utils.js";
 import copyPaste  from "copy-paste";
 import debugClient from 'debug'
 const debug = debugClient('utils-tests');
@@ -30,30 +30,28 @@ Tongue venison ham tri-tip.  Pig porchetta bacon, kielbasa pork chop spare ribs 
     expect(buildQueryString(argv)).toBe('paras=5&start-with-lorem=1&type=all-meat')
   });
 
-  test.skip('skip copying to the clipboard',() => {
-    let argv = {}
+});
+
+describe("skip copy to clipboard", () => {
+  test('skip copying to the clipboard',async () => {
+    let bacon = ["bacon ipsum","turkey"]
     const noClip = true;
-    const currentClipboardContents = copyPaste.paste()
-    debug(currentClipboardContents)
-
-    const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
-    getBacon(apiUrlWithParams,noClip)
-    const newClipboardContents = copyPaste.paste()
-    debug(newClipboardContents)
-
-    expect(newClipboardContents).toBe(currentClipboardContents)
+    await copyPaste.copy("foo")
+    processOutput(bacon, {noClip: true});
+    const newClipboardContents = await copyPaste.paste()
+    expect(newClipboardContents).not.toBe("foo")
   });
+});
 
-  test.skip('copying to the clipboard',async () => {
-    let argv = {}
+
+describe("copy to clipboard", () => {
+  test('processes output to clipboard',async () => {
+    let bacon = ["bacon ipsum","turkey"]
     const noClip = undefined;
-    const currentClipboardContents = copyPaste.paste()
-    debug(currentClipboardContents)
-    const apiUrlWithParams = `${apiUrl}?${buildQueryString(argv)}`
-    getBacon(apiUrlWithParams, noClip)
-    const newClipboardContents = copyPaste.paste()
-    debug(newClipboardContents)
-    expect(newClipboardContents).not.toBe(currentClipboardContents)
+    await copyPaste.copy("")
+    processOutput(bacon, {noClip});
+    const newClipboardContents = await copyPaste.paste()
+    expect(newClipboardContents).toBe("bacon ipsum\nturkey")
   });
 
 });

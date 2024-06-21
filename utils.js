@@ -18,6 +18,11 @@ export const buildQueryString = (argv) => {
     return qs
   }
 
+  /**
+   *  Returns an array of paragraphs from the Bacon Ipsum API
+   * @param {String} apiUrlWithParams The bacon ipsum endpoint including any parameters
+   * @returns {Array}
+   */
   export const getBacon = async (apiUrlWithParams) => {
     try {
       let response = await fetch(apiUrlWithParams)

@@ -53,9 +53,9 @@ debug(apiUrlWithParams)
 
 // Fetch data from the Bacon Ipsum API
 let noClip = argv.nc
-debug(argv.noClip)
 
 let bacon = await getBacon(apiUrlWithParams)
+debug(bacon)
 let outputOptions = {
   noClip: noClip
 }
