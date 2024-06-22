@@ -4,5 +4,7 @@ addReviewers: true
 # Set to true to add assignees to pull requests
 addAssignees: false
 
-reviewers: beauraines
+reviewers
+  - beauraines
+
 assign-yourself: false
