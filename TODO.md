@@ -8,6 +8,6 @@
 - [x] Configure linter - 'dont warn for Node globals like console'
 - [x] Swith to ESM and import latest versions of dependencies
 - [x] Add README
-- [ ] Add output format options
+- [x] Add output format options
 - [x] Add clipboard bypass option
-- [ ] change getBacon to async/await and separate data processing
+- [xs] change getBacon to async/await and separate data processing

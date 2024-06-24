@@ -32,12 +32,12 @@ const argv = yargs(process.argv.slice(2))
     describe: 'Starts the first paragraph with ‘Bacon ipsum dolor sit amet’',
     type: 'boolean'
   })
-  // .option('format',{
-  //   alias: 'f',
-  //   describe:'Output format. Defaults to `text`',
-  //   default: 'text',
-  //   choices: ['text','json','html']
-  // })
+  .option('format',{
+    alias: 'f',
+    describe:'Output format. Defaults to `text`',
+    default: 'text',
+    choices: ['text','json','html']
+  })
   .option('nc',{
     alias: 'nc',
     describe:'Only outputs to console, bypassing the clipboard.',
@@ -53,11 +53,12 @@ debug(apiUrlWithParams)
 
 // Fetch data from the Bacon Ipsum API
 let noClip = argv.nc
+let format = argv.format
 
-let bacon = await getBacon(apiUrlWithParams)
+let bacon = await getBacon(apiUrlWithParams,format)
 debug(bacon)
 let outputOptions = {
-  noClip: noClip
+  noClip
 }
 debug(outputOptions)
-processOutput(bacon, outputOptions);
+await processOutput(bacon, outputOptions);

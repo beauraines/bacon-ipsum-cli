@@ -23,11 +23,14 @@ export const buildQueryString = (argv) => {
    * @param {String} apiUrlWithParams The bacon ipsum endpoint including any parameters
    * @returns {Array}
    */
-  export const getBacon = async (apiUrlWithParams) => {
+  export const getBacon = async (apiUrlWithParams,format) => {
+    debug(apiUrlWithParams+`&format=${format}`)
     try {
-      let response = await fetch(apiUrlWithParams)
-      if (response.ok) {
+      let response = await fetch(apiUrlWithParams+`&format=${format}`)
+      if (response.ok && format == 'json') {
         return await response.json()
+      } else if (response.ok && (format == 'text' || format == 'html')) {
+        return await response.text()
       } else {
         throw new Error(response.statusText);
       }
@@ -36,13 +39,13 @@ export const buildQueryString = (argv) => {
     }
   }
 
-  export const processOutput = (data, options) => {
+  export const processOutput = async (data, options) => {
   if (options.noClip) { // noClip is alias for no-clip
     // Display the fetched text in the console
-    console.log(data.join('\n'));
+    console.log(data);
   } else {
     // Copy the text to the clipboard
-    copyPaste.copy(data.join('\n'), () => {
+    await copyPaste.copy(data, () => {
       console.log('Bacon ipsum text copied to the clipboard!');
     });
   }
