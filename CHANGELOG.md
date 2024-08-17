@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.25](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.24...v0.2.25) (2024-08-17)
+
 ## [0.2.24](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.23...v0.2.24) (2024-08-16)
 
 ## [0.2.23](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.22...v0.2.23) (2024-08-16)
