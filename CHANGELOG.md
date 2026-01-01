@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.36](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.35...v0.2.36) (2026-01-01)
+
+
+### Bug Fixes
+
+* **deps:** bump chalk from 5.4.1 to 5.6.2 ([#49](https://github.com/beauraines/bacon-ipsum-cli/issues/49)) ([ac20c3c](https://github.com/beauraines/bacon-ipsum-cli/commit/ac20c3c0ab3e1c0daa0c0ba0b878b668ce259ec1))
+
 ## [0.2.35](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.34...v0.2.35) (2026-01-01)
 
 ## [0.2.34](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.33...v0.2.34) (2025-12-18)
