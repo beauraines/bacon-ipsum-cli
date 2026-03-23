@@ -6,6 +6,10 @@ on:
     types: [completed]
     branches: [master,main]
 
+permissions:
+  contents: write
+  id-token: write
+
 jobs:
   publish-new-version:
     runs-on: ubuntu-latest
@@ -42,8 +46,6 @@ jobs:
       - name: Publish to NPM
         if: steps.should_release.outcome == 'success'
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push commits to GitHub
         if: steps.should_release.outcome == 'success'
