@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.46](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.45...v0.2.46) (2026-06-03)
+
+
+### Bug Fixes
+
+* **deps:** bump query-string from 9.3.1 to 9.4.0 ([#62](https://github.com/beauraines/bacon-ipsum-cli/issues/62)) ([2993cc5](https://github.com/beauraines/bacon-ipsum-cli/commit/2993cc5bdbaa2d1ce0bb383bb95e6b4924ca5aa6))
+
 ## [0.2.45](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.44...v0.2.45) (2026-06-03)
 
 ## [0.2.44](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.43...v0.2.44) (2026-05-02)
