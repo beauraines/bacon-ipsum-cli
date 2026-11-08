@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.50](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.49...v0.2.50) (2026-11-08)
+
+
+### Bug Fixes
+
+* **deps:** bump chalk from 5.6.2 to 6.0.1 ([#70](https://github.com/beauraines/bacon-ipsum-cli/issues/70)) ([e85e8ae](https://github.com/beauraines/bacon-ipsum-cli/commit/e85e8ae8ebf54cbfb4612d57525e5cb76a62d03c))
+* **deps:** bump yargs from 18.1.0 to 18.2.0 ([#72](https://github.com/beauraines/bacon-ipsum-cli/issues/72)) ([867cfc1](https://github.com/beauraines/bacon-ipsum-cli/commit/867cfc1e326b862d62a95e60a9ccb3dce6f2acb6))
+
 ## [0.2.49](https://github.com/beauraines/bacon-ipsum-cli/compare/v0.2.48...v0.2.49) (2026-09-09)
 
 
